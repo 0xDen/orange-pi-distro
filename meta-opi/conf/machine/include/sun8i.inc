@@ -27,7 +27,7 @@ MACHINE_EXTRA_RRECOMMENDS = "kernel-modules"
 UBOOT_LOCALVERSION = "-g${@d.getVar('SRCPV', True).partition('+')[2][0:7]}"
 
 UBOOT_ENTRYPOINT ?= "0x40008000"
-UBOOT_LOADADDRESS ?= "0x400080OB00"
+UBOOT_LOADADDRESS ?= "0x40008000"
 
 SERIAL_CONSOLE ?= "115200 ttyS0"
 MACHINE_FEATURES ?= "alsa apm keyboard rtc serial screen usbgadget usbhost vfat"
