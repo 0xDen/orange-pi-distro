@@ -22,6 +22,7 @@ file://Licenses/x11.txt;md5=b46f176c847b8742db02126fb8af92e2 \
 SRC_URI = "git://git.denx.de/u-boot.git;branch=master \
            file://boot.cmd \
            file://Increase_Kernel_Image_Max_Size.patch \
+           file://0001-u-boot-solar-Add-FIT-signature-feature.patch \
            "
 
 SRCREV = "36fec02b1f90b92cf51ec531564f9284eae27ab4"
@@ -39,6 +40,5 @@ UBOOT_ENV = "boot"
 BUILD_CFLAGS+="-D_DEBUG"
 
 do_compile_append() {
-    echo "DDDDDDDD: BUILD_CFLAGS = >${BUILD_CFLAGS}<"
     ${B}/tools/mkimage -C none -A arm -T script -d ${WORKDIR}/boot.cmd ${WORKDIR}/${UBOOT_ENV_BINARY}
 }
